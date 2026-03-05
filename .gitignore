@@ -21,6 +21,11 @@ cabal-dev/
 result
 result-*
 
+# Local SQLite files
+*.sqlite
+*.sqlite3
+*.db
+
 # Editor/OS noise
 *.swp
 *~
