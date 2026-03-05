@@ -1,0 +1,27 @@
+dist-newstyle/
+.cabal-sandbox/
+cabal-dev/
+
+# Stack
+.stack-work/
+
+# Compiler/interface artifacts
+*.hi
+*.o
+*.chi
+*.chs.h
+*.dyn_hi
+*.dyn_o
+
+# REPL/history
+.ghc.environment.*
+.ghci
+
+# Nix (if used later)
+result
+result-*
+
+# Editor/OS noise
+*.swp
+*~
+.DS_Store

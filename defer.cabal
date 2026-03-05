@@ -1,0 +1,49 @@
+cabal-version:      2.4
+name:               defer
+version:            0.1.0.0
+build-type:         Simple
+
+common warnings
+  ghc-options:      -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+  default-language: GHC2021
+
+library
+  import:           warnings
+  hs-source-dirs:   src
+  exposed-modules:  Defer.App
+                  , Defer.Frontend
+                  , Defer.Greeting
+  build-depends:    base ^>=4.18.2.1
+                  , aeson ^>=2.2
+                  , blaze-html ^>=0.9
+                  , bytestring ^>=0.11
+                  , text ^>=2.0
+                  , wai ^>=3.2
+                  , warp ^>=3.3
+                  , http-types ^>=0.12
+
+executable defer-web
+  import:           warnings
+  hs-source-dirs:   app
+  main-is:          Main.hs
+  build-depends:    base ^>=4.18.2.1
+                  , defer
+                  , wai ^>=3.2
+                  , warp ^>=3.3
+                  , bytestring ^>=0.11
+                  , text ^>=2.0
+
+test-suite defer-test
+  import:           warnings
+  type:             exitcode-stdio-1.0
+  hs-source-dirs:   test
+  main-is:          Main.hs
+  build-depends:    base ^>=4.18.2.1
+                  , defer
+                  , tasty ^>=1.5
+                  , tasty-hunit ^>=0.10
+                  , bytestring ^>=0.11
+                  , text ^>=2.0
+                  , wai ^>=3.2
+                  , wai-extra ^>=3.1
+                  , http-types ^>=0.12
