@@ -32,6 +32,13 @@ Available endpoints:
 - `GET /` -> HTML homepage rendered from SQLite articles
 - `GET /health` -> JSON status payload
 - `GET /api/articles` -> JSON list of seeded articles from SQLite
+- `POST /api/articles` -> import article from URL and persist title/summary/content
+
+Homepage integration:
+
+- `/` now includes an **Import article** form.
+- Paste a URL and submit to call `POST /api/articles` from the browser.
+- On success, the page reloads and shows the newly imported article.
 
 Set a custom port:
 

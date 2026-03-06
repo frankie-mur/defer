@@ -11,6 +11,7 @@ library
   import:           warnings
   hs-source-dirs:   src
   exposed-modules:  Defer.App
+                  , Defer.ArticleImport
                   , Defer.Database
                   , Defer.Frontend
                   , Defer.Greeting
@@ -19,10 +20,12 @@ library
                   , blaze-html ^>=0.9
                   , bytestring ^>=0.11
                   , esqueleto ^>=3.5
+                  , http-conduit ^>=2.3
                   , monad-logger ^>=0.3
                   , persistent ^>=2.14
                   , persistent-sqlite ^>=2.13
                   , persistent-template ^>=2.12
+                  , tagsoup ^>=0.14
                   , text ^>=2.0
                   , wai ^>=3.2
                   , warp ^>=3.3
@@ -48,6 +51,7 @@ test-suite defer-test
                   , defer
                   , tasty ^>=1.5
                   , tasty-hunit ^>=0.10
+                  , aeson ^>=2.2
                   , bytestring ^>=0.11
                   , text ^>=2.0
                   , wai ^>=3.2
